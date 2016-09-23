@@ -18,32 +18,44 @@ Bonus Requirements Challenge (Worth extra points if correct):
 2.) Make computer impossible to beat (tie every time). (10 bonus points)
 %}
 
-
+%% Main Script %%
 clear all
 
 %Welcome message%
-welcome = ('Welcome to tic-tac-toe for MATLAB! When you are ready to begin, please enter your name: \n');
-username = input(welcome ,'s');
+%welcome = ('Welcome to tic-tac-toe for MATLAB! When you are ready to begin, please enter your name: \n');
+%username = input(welcome ,'s');
 
 % Create Game board %
 
-board = [1:3;4:6;7:9];
-strboard = num2str(board);
-disp(strboard)
+%board = [1:3;4:6;7:9];
+board = [1:3,1:3];
+figure
+hold
+grid ON
+box ON
+plot(board)
 
-%The first move will be made by the computer%
 
-move1 = randi(9);
-strboard = num2str(board);
-board(move1) = 'O';
-disp(strboard)
 
-%The next move is the player move.%
-move2 = input('It is now your turn, Pick a number between 1 and 9 to choose your space: \n');
-
-if move2 == move1
-    move2 = input('That move has already been played, try again!: \n');
-end
-
-board(move2) = char('X');
-
+% strboard = num2str(board);
+% disp(strboard)
+% 
+% %The first move will be made by the computer%
+% 
+% compmove = 'Please wait while the computer decides where to move';
+% disp(compmove)
+% pause(2)
+% move1 = randi(9);
+% strmove1 = char(move1);
+% strboard(strmove1) = o;
+% disp(strboard)
+% 
+% %The next move is the player move.%
+% move2 = input('It is now your turn, Pick a number between 1 and 9 to choose your space: \n');
+% 
+% if move2 == move1
+%     move2 = input('That move has already been played, try again!: \n');
+% end
+% 
+% board(move2) = char('X');
+% 
