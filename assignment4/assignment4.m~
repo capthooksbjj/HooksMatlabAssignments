@@ -2,7 +2,8 @@
 % created by: Kevin Hooks
 % the purpose of this script is to create a tic tac toe game that utilizes
 % loops 
-
+% The game is still designed to function when the user is trying to win and
+% t
 %% Main Script %%
 
 clear variables
@@ -192,38 +193,7 @@ elseif move5 == 9
 end                                                
 disp(strboard)
 
-winCheck(strboard)
-
-% %check for win
-% if strboard(:,1) == 'X' % Vertical 3 in a row
-%     error('You win!')
-% elseif strboard(:,1) == 'O'
-%     error('You lose!')
-% elseif strboard(:,4) == 'X'
-%     error('You win!')
-% elseif strboard(:,4) == 'O'
-%     error('You lose!')
-% elseif strboard(:,7) == 'X'
-%     error('You win!')
-% elseif strboard(:,7) == 'O'
-%     error('You lose!')
-% elseif strboard(1,1)=='X' && strboard(1,4)=='X' && strboard(1,7)=='X' %Horizontal
-%     error('You win!')
-% elseif strboard(1,1)=='O' && strboard(1,4)=='O' && strboard(1,7)=='O'
-%     error('You lose!')
-% elseif strboard(2,1)=='X' && strboard(2,4)=='X' && strboard(2,7)=='X'
-%     error('You win!')
-% elseif strboard(2,1)=='O' && strboard(2,4)=='O' && strboard(2,7)=='O'
-%     error('You lose!')
-% elseif strboard(3,1)=='X' && strboard(3,4)=='X' && strboard(3,7)=='X'
-%     error('You win!')
-% elseif strboard(3,1)=='O' && strboard(3,4)=='O' && strboard(3,7)=='O'
-%     error('You lose!')
-% elseif strboard(1,1)=='O' && strboard(2,4)=='O' && strboard(3,7)=='O' %Diagonal
-%     error('You lose!')
-% elseif strboard(3,1)=='O' && strboard(2,4)=='O' && strboard(1,7)=='O'
-%     error('You lose!')
-% end
+winCheck(strboard); %check for win
 
 
 %The next move is the player move.%
@@ -232,6 +202,7 @@ move6 = input('It is now your turn, Pick a number still available to choose your
 %Check to make sure the new move hasn't been done
 if move6 == move1 || move6==move2 || move6==move3 || move6==move4 || move6==move5
     move6 = input('That space has already been played, try again!: \n');
+
 end
 
 if move6 == 1
@@ -256,35 +227,7 @@ end
 disp(strboard)
 
 %check for win
-if strboard(:,1) == 'X'
-    error('You win!')
-elseif strboard(:,1) == 'O'
-    error('You lose!')
-elseif strboard(:,4) == 'X'
-    error('You win!')
-elseif strboard(:,4) == 'O'
-    error('You lose!')
-elseif strboard(:,7) == 'X'
-    error('You win!')
-elseif strboard(:,7) == 'O'
-    error('You lose!')
-elseif strboard(1,1)=='X' && strboard(1,4)=='X' && strboard(1,7)=='X'
-    error('You win!')
-elseif strboard(1,1)=='O' && strboard(1,4)=='O' && strboard(1,7)=='O'
-    error('You lose!')
-elseif strboard(2,1)=='X' && strboard(2,4)=='X' && strboard(2,7)=='X'
-    error('You win!')
-elseif strboard(2,1)=='O' && strboard(2,4)=='O' && strboard(2,7)=='O'
-    error('You lose!')
-elseif strboard(3,1)=='X' && strboard(3,4)=='X' && strboard(3,7)=='X'
-    error('You win!')
-elseif strboard(3,1)=='O' && strboard(3,4)=='O' && strboard(3,7)=='O'
-    error('You lose!')
-elseif strboard(1,1)=='O' && strboard(2,4)=='O' && strboard(3,7)=='O'
-    error('You lose!')
-elseif strboard(3,1)=='O' && strboard(2,4)=='O' && strboard(1,7)=='O'
-    error('You lose!')
-end
+winCheck(strboard);
 
 disp(compmove)
 pause(2)
@@ -308,6 +251,8 @@ elseif move4 == 7 && move6 == 9
     move7 = 2;
 elseif move5 == 7 && move6 == 3
     move7 = 2;
+elseif move5 == 7 && move6 == 8 && strboard(1,7) == '3'
+    move7 = 3;
 end
 
 if move7 == 1
@@ -330,37 +275,7 @@ elseif move7 == 9
     strboard(3,7) = 'O';    
 end                                                
 disp(strboard)
-winCheck(strboard)
-% check for win
-% if strboard(:,1) == 'X'
-%     error('You win!')
-% elseif strboard(:,1) == 'O'
-%     error('You lose!')
-% elseif strboard(:,4) == 'X'
-%     error('You win!')
-% elseif strboard(:,4) == 'O'
-%     error('You lose!')
-% elseif strboard(:,7) == 'X'
-%     error('You win!')
-% elseif strboard(:,7) == 'O'
-%     error('You lose!')
-% elseif strboard(1,1)=='X' && strboard(1,4)=='X' && strboard(1,7)=='X'
-%     error('You win!')
-% elseif strboard(1,1)=='O' && strboard(1,4)=='O' && strboard(1,7)=='O'
-%     error('You lose!')
-% elseif strboard(2,1)=='X' && strboard(2,4)=='X' && strboard(2,7)=='X'
-%     error('You win!')
-% elseif strboard(2,1)=='O' && strboard(2,4)=='O' && strboard(2,7)=='O'
-%     error('You lose!')
-% elseif strboard(3,1)=='X' && strboard(3,4)=='X' && strboard(3,7)=='X'
-%     error('You win!')
-% elseif strboard(3,1)=='O' && strboard(3,4)=='O' && strboard(3,7)=='O'
-%     error('You lose!')
-% elseif strboard(1,1)=='O' && strboard(2,4)=='O' && strboard(3,7)=='O'
-%     error('You lose!')
-% elseif strboard(3,1)=='O' && strboard(2,4)=='O' && strboard(1,7)=='O'
-%     error('You lose!')
-% end
+winCheck(strboard);% check for win
 
 %Next move is player move
 move8 = input('It is now your turn, Pick a number still available to choose your space: \n');
@@ -391,7 +306,7 @@ elseif move8 == 9
 end                                                
 disp(strboard)
 
-winCheck(strboard) %check for win
+winCheck(strboard); %check for win
 
 %Computer has the last move%
 disp(compmove)
@@ -435,8 +350,10 @@ end
 disp(strboard)
 
 %check for win
-winCheck(strboard)
-
+winCheck(strboard);
+if winCheck ==0
+    user = input('It''s a tie! play again? y/n: \n' , 's');
+end
 
 end
 

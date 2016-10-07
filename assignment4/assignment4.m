@@ -2,7 +2,10 @@
 % created by: Kevin Hooks
 % the purpose of this script is to create a tic tac toe game that utilizes
 % loops 
-
+% The game is still designed to function when the user is trying to win,
+% yet the computer is still unbeatable. The entire game is in a while loop
+% as long as the user wants to play. For loop located in the winCheck
+% function.
 %% Main Script %%
 
 clear variables
